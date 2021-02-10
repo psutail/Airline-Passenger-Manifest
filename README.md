@@ -6,6 +6,9 @@ To address these issues and to achieve the best customer experience, a newly bui
 Engineers to revamp a 60-year-old system from scratch. The new system design is expected to be modern, webbased, extensible, future proof and more robust than the old system which was built using FOXPRO.
 
 
+                   /*  BUILT IN LARAVEL 8.0 WITH JETSTREAM AUTH */
+
+
 INITIAL VERSION STRUCTURE & ITS EXPLANATION :::===================================
 
 
@@ -50,6 +53,8 @@ Airline-Passenger-Manifest\app\Http\Controllers\BookingController.php
   AFTER THAT USING ALL THE FUNCTIONS DEFINE UNDER THE NAME SPACE INTERFACE  "Airline-Passenger-Manifest\app\Repositories" TO DO OUR BOOKING
 
   ==============================================================================================================
+
+  6)ALL ROUTE ARE UNDER : Airline-Passenger-Manifest\route\web.php along with Lravel 8 jetstream Auth
 
   5) ALL BALDE FILE /HTML VIEW FILE ARE UNDER NAME SPACE 
 

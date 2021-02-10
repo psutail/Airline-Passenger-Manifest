@@ -17,17 +17,6 @@ class BookingController extends Controller
         $this->airline_booking=$airline_booking;
     }
 
-
-    public function get_available_seat($airline_id)
-    {   
-    	//Here Fetching the available seats & SENDING IT TO THE BLADE FILE
-
-		$data=$this->airline_booking->getAvailableSeats($airline_id);
-
-		return view('booking/lists')
-			  ->with('data',$data)
-    }
-
     public function get_available_seat($airline_id)
     {   
     	//Here Fetching the available seats & SENDING IT TO THE BLADE FILE
@@ -96,7 +85,7 @@ class BookingController extends Controller
 			  ->with('data',$data)
 	}
 
-	public function get_passenger_list($booking_number)
+	public function get_aircraft_detail($aircraft_id)
 	{
 	 	$data=$this->airline_booking->getAircraftInfo($aircraft_id);
 		return view('booking/aircraft/detail')
