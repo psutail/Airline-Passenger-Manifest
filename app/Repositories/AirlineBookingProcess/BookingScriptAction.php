@@ -13,7 +13,7 @@ interface AirlineBookingProcess
 
     //CHECK AND ASSIGN SEATS TO PASSENGER
 
-    public function assignSeats();
+    public function assignSeats(Array $customer_information);
 
     //ACCEPT PASSENGER BOOKING
 
@@ -25,6 +25,6 @@ interface AirlineBookingProcess
 
     // GET AIRCRAFT INFO
 
-    public function getAircraftInfo();
+    public function getAircraftInfo($aircraft_id);
 
 }

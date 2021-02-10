@@ -6,16 +6,56 @@ To address these issues and to achieve the best customer experience, a newly bui
 Engineers to revamp a 60-year-old system from scratch. The new system design is expected to be modern, webbased, extensible, future proof and more robust than the old system which was built using FOXPRO.
 
 
-OOPS CODE STRCUTURE AND ITS BUSSINESS LOGIC WRTITTEN UNDER NAME SPACE :
+INITIAL VERSION STRUCTURE & ITS EXPLANATION :::===================================
 
-ariline_maninfest\app\Repositories
+
+1)OOPS CODE STRCUTURE AND ITS BUSSINESS LOGIC WRTITTEN UNDER NAME SPACE :
+
+Airline-Passenger-Manifest\app\Repositories
+
+======================================================================================
 
 MODEL ARE UNDER : -
 
-ariline_maninfest\app\Models
+2)Airline-Passenger-Manifest\app\Models : DATA ACTIVE DIRECTORY
+
+========================================================================================
+
+3)ALL DATA MIGRATION ARE UNDER : -
+
+Airline-Passenger-Manifest\database\migrations
 
 ALL WE NEED RUN THE MIGRATION USING PHP ARTISAN
 
 "php artisan migrate"
 
-We can further design our application basic of the bussinees logic wriiten under repo interface as mentioned above.
+=============================================================================================
+
+ 
+4)We can further design our application basic of the bussinees logic wriiten under repo interface as mentioned above.
+
+//WIRE FRAME OF OUR BOOKING APPLICATION UNDER BookingController.php : ---
+
+Airline-Passenger-Manifest\app\Http\Controllers\BookingController.php  
+
+"// HERE WE ARE INJECTING DEPENDENCIES FROM BUSSINEESS LAYER /REPOSITORY  IN TO CONSTRUCTOR"
+
+<!--  public function __construct(AirlineBookingProcess $airline_booking)
+    {
+    	// HERE WE ARE INJECTING DEPENDENCIES FROM BUSSINEESS LAYER /REPOSITORY
+      
+        $this->airline_booking=$airline_booking;
+    } -->
+
+  AFTER THAT USING ALL THE FUNCTIONS DEFINE UNDER THE NAME SPACE INTERFACE  "Airline-Passenger-Manifest\app\Repositories" TO DO OUR BOOKING
+
+  ==============================================================================================================
+
+  5) ALL BALDE FILE /HTML VIEW FILE ARE UNDER NAME SPACE 
+
+  Airline-Passenger-Manifest\resources\views
+
+
+NOW ALL THE BASIC IS READY TO DEVELOPE A FULL FLEDGE APPLICATION EXTENDING MODEL,VIEW,CONTROLLER & ITS BUSSINESS LOGIC
+
+THANKS A LOT.

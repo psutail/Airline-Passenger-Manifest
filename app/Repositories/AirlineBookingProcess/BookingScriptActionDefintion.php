@@ -81,6 +81,8 @@ class BookingScriptActionDefintion implements AirlineBookingProcess
 
         }
 
+        return $PassengerBooking->booking_number;
+
     }
 
 
@@ -89,9 +91,14 @@ class BookingScriptActionDefintion implements AirlineBookingProcess
         return  PassengerList::where('booking_number',$booking_number)->get();
     }
 
-    public function getAircraftInfo(){
+    public function getAircraftInfoAll(){
 
         return  AircraftInfo::all();
+    }
+
+    public function getAircraftInfo($aircraft_id){
+
+         return  AvailableSeatsAirline::where('aircraft_id',$aircraft_id)->first();
     }
 
     public function assignSeats(Array $customer_information){
@@ -108,13 +115,13 @@ class BookingScriptActionDefintion implements AirlineBookingProcess
                 $this->updateAvailableSeat($data->id,$customer_information);
 
                 //SAVE PASSENGER INFORMATION
-                $this->acceptPassengerBooking($customer_information);
+                $booking_number=$this->acceptPassengerBooking($customer_information);
 
-                return $this->messages(1);
+                return ['result'=>'success','booking_number'=>$booking_number,'message'=>$this->messages(1)];
 
             }else{
 
-                return $this->messages(0);
+                return ['result'=>'fail','booking_number'=>'NA','message'=>$this->messages(0)];
             }
 
         }
